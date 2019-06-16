@@ -1,0 +1,292 @@
+$orangeColor : #ff4e2e;
+$light-greyColor : #fbfbfb;
+$greyColor : #8993ad;
+$blackColor : #222;
+$whiteColor : #FAFAFA;
+$animateTime : 0.2s;
+
+@mixin animate {
+  transition: $animateTime;
+  -webkit-transition: $animateTime;
+  -moz-transition: $animateTime;
+  -ms-transition: $animateTime;
+  -o-transition: $animateTime;
+}
+//btn
+.recall-btn-void {
+  display: inline-block;
+  border: 1px solid $orangeColor;
+  color: $orangeColor;
+  padding: 15px 40px;
+  font: {
+    family: 'Roboto';
+    size: 16px;
+    weight: 400;
+  }
+  &:hover {
+    background-color: $orangeColor;
+    color: $whiteColor;
+  }
+  @include animate;
+  &-grey {
+    background-color: $light-greyColor;
+  }
+  &-white {
+    background-color: $whiteColor;
+  }
+}
+
+.recall-btn-filled {
+  display: inline-block;
+  border: 1px solid $orangeColor;
+  background-color: $orangeColor;
+  color: $whiteColor;
+  padding: 15px 40px;
+  font: {
+    family: 'Roboto';
+    size: 18px;
+    weight: 400;
+  }
+  &:hover {
+    background-color: $whiteColor;
+    color: $orangeColor;
+  }
+  @include animate;
+}
+//number 
+.number-block {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.number {
+  color: $blackColor;
+  font: {
+    family: 'Roboto';
+    size: 25px;
+    weight: 400;
+  }
+  line-height: 54px;
+  @include animate;
+  &-header {
+    font-weight: 700;
+    margin-right: 29px;
+  }
+  &:hover {
+    color: $orangeColor;
+  }
+}
+
+//headline 
+.center {
+  text-align: center;
+}
+.headline {
+  margin: {
+    top: 98px;
+    bottom: 94px;
+  }
+  text-align: center;
+  color: $blackColor;
+  font: {
+    family: 'Roboto';
+    size: 48px;
+    weight: 700;
+  }
+  &-works {
+    margin-top: 0;
+    padding-top: 98px;
+  }
+}
+//header
+//navigation-header
+.header_nav {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  & ul li {
+    display: inline-block;
+    padding-right: 15px;
+  }
+  &-link {
+    color: $blackColor;
+    font: {
+      family: 'Roboto';
+      size: 16px;
+      weight: 400;
+    }
+    line-height: 54px;
+    &:hover {
+      color: $orangeColor;
+      border-bottom: 1px solid $orangeColor;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+header {
+  background-color: $light-greyColor;
+}
+.my_name {
+  color: $blackColor;
+  font: {
+    family: 'Roboto';
+    size: 75px;
+    weight: 700;
+  }
+  letter-spacing: -0.91px;
+  margin-bottom: 23px;
+  margin-top: 200px;
+}
+.header_about {
+  color: $greyColor;
+  font: {
+    family: 'Roboto';
+    size: 24px;
+    weight: 400;
+  }
+  margin-bottom: 48px;
+}
+.my_main_photo {
+  margin-left: -100px;
+}
+.flex-end {
+  display: flex;
+  align-items: flex-end;
+}
+//about
+.about {
+  &-icons {
+    height: 74px;
+    margin-bottom: 24px;
+  }
+  &-text {
+    color: $greyColor;
+    font: {
+      family: 'Tahoma';
+      size: 16px;
+      weight: 400;
+    }
+    max-height: 100px; 
+    margin-bottom: 96px;
+  }
+  &_margin-bottom {
+    margin-bottom: 103px;
+  }
+}
+//my works 
+.my_works {
+  background-color: $light-greyColor;
+  &-description {
+    color: $greyColor;
+    font: {
+      family: 'Tahoma';
+      size: 20px;
+      weight: 400;
+    }
+    max-height: 80px;
+    margin: {
+      top: 37px;
+      bottom: 97px;
+    }
+  }
+  &-img {
+    max-width: 98%;
+  }
+  &_margin-bottom {
+    margin-bottom: 102px;
+  }
+}
+//details 
+.details {
+  background-color: #ff4e2e;
+  &_description {
+    color: $whiteColor;
+    font: {
+      family: 'Tahoma';
+      size: 40px;
+      weight: 700;
+    }
+    margin: {
+      top: 84px;
+      bottom: 40px;
+    }
+    line-height: 1.2;
+  }
+  &_description-small {
+    color: $whiteColor;
+    font: {
+      family: 'Tahoma';
+      size: 18px;
+      weight: 400;
+    }
+    margin-bottom: 86px;
+    line-height: 1.5;
+  }
+}
+//footer 
+//navigation-footer
+.footer_nav {
+  margin-top: 86px;
+  & ul li {
+    margin-bottom: 8px;
+    list-style-type: none;
+  }
+  &_link {
+    color: $greyColor;
+    line-height: 1.2;
+    font: {
+      family: 'Tahoma';
+      size: 18px;
+      weight: 400;
+    }
+    &:hover {
+      color: $orangeColor;
+    }
+  }
+}
+
+.contacts {
+  margin-top: 77px;
+  margin-bottom: 77px;
+}
+.mail-footer {
+  color: $blackColor;
+  font: {
+    family: 'Tahoma';
+    size: 25px;
+    weight: 400;
+  }
+  line-height: 54px;
+  @include animate;
+  &:hover {
+    color: $orangeColor;
+  }
+}
+.phone_icon {
+  height: 18px;
+  width: 18px;
+  margin-top: -4px;
+  margin-right: 21px;
+}
+.mail_icon {
+  height: 15px;
+  width: 23px;
+  margin-top: -3px;
+  margin-right: 18px;
+}
+
+.footer_margin-top {
+  margin-top: 77px;
+}
+.social {
+  margin-top: 24px;
+}
+.social_icon {
+  margin-right: 30px;
+  display: inline-block;
+  &:last-child {
+    margin-right: 0;
+  }
+}

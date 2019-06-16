@@ -1,0 +1,92 @@
+$orangeColor : #ff4e2e;
+$greyColor : #8993ad;
+$blackColor : #222;
+$whiteColor : #FAFAFA;
+$animateTime : 0.2s;
+@mixin animate {
+  transition: $animateTime;
+  -webkit-transition: $animateTime;
+  -moz-transition: $animateTime;
+  -ms-transition: $animateTime;
+  -o-transition: $animateTime;
+}
+
+#form {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #848484b3;
+	justify-content: center;
+	align-items: center;
+}
+.form {
+	width: 370px;
+	height: 380px;
+	background-color: $whiteColor;
+  text-align: center;
+  & h2 {
+    margin-top: 32px;
+    margin-bottom: 19px;
+    font-size: 26px;
+    font-family: 'Tahoma';
+    color: $blackColor;
+  }
+  & .checkbox {
+    text-align: left;
+    width: 80%;
+    margin-left: 50px;
+    position: relative;
+    color: $greyColor;
+    font-family: 'Tahoma';
+    font-size: 14px;
+    & span {
+      background-image: url(../img/icons/checkbox-icon.png);
+      position: absolute;
+      display: block;
+      height: 17px;
+      width: 17px;
+      left: -25px;
+    }
+    & input:checked + span {
+      background: transparent url(../img/icons/checkbox-icon_checked.png);
+    }
+  }
+  & input[type = "text"], input[type = "tel"], input[type = "button"]{
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border: 2px solid #dce0eb;
+    line-height: 36px;
+    margin-bottom: 15px;
+  }
+  & input[type = "button"] {
+    border: 1px solid $orangeColor;
+    background-color: $orangeColor;
+    color: $whiteColor;
+    cursor: pointer;
+    @include animate;
+  }
+  & input[type = "button"]:hover {
+    background-color: $whiteColor;
+    color: $orangeColor;
+  }
+  & input[type = "checkbox"] {
+    position: absolute;
+    left: -25px;
+    height: 17px;
+    width: 17px;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  .form input[type = "button"]:focus {
+    background-color: $whiteColor;
+    color: $orangeColor;
+  }
+}
